@@ -1,7 +1,7 @@
-package net.yourpackage.yourmod;
+package net.vegandelight.extra;
 
-public class MyMod {
-    static final String modID = "my_mod_id";
+public class VDExtraMod {
+    static final String modID = "vegan_delight_extra";
 
     static void init() {
         System.out.println("Hi from example mod!");

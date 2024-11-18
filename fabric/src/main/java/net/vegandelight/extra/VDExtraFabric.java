@@ -1,11 +1,11 @@
-package net.yourpackage.yourmod;
+package net.vegandelight.extra;
 
 import net.fabricmc.api.ModInitializer;
 
-public class MyModFabric implements ModInitializer {
+public class VDExtraFabric implements ModInitializer {
     @Override
     public void onInitialize() {
-        MyMod.init();
+        VDExtraMod.init();
         // Your fabric initialisation code here
     }
 }
