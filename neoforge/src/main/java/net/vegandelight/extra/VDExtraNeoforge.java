@@ -1,15 +1,17 @@
 package net.vegandelight.extra;
 
-import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.common.Mod;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(VDExtraMod.modID)
 public class VDExtraNeoforge {
 
     public static IEventBus modEventBus;
 
-    public VDExtraNeoforge(IEventBus modEventBus) {
-        VDExtraNeoforge.modEventBus = modEventBus;
+    @SuppressWarnings("removal")
+    public VDExtraNeoforge() {
+        VDExtraNeoforge.modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         VDExtraMod.init();
         // Your neoforge initialisation code here
