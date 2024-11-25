@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "vegan_delight_extra:block/olive_sapling"
+  }
+}

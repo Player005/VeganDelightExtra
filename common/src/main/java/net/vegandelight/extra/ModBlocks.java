@@ -7,12 +7,18 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.SaplingBlock;
+import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
 public abstract class ModBlocks {
+    static Holder<Block> olive_sapling = register("olive_sapling", true, () -> new SaplingBlock(
+            TreeGrower.BIRCH, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)
+    ) {});
+
     static Holder<Block> olive_leaves = register("olive_leaves", true, () -> new Block(
             BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_LEAVES)
     ));

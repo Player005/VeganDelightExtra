@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "vegan_delight_extra:block/olive_sapling"
+  }
+}
