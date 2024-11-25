@@ -21,6 +21,10 @@ public abstract class ModBlocks {
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
     ));
 
+    static Holder<Block> olive_wood = register("olive_wood", true, () -> new RotatedPillarBlock(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)
+    ));
+
     private static @NotNull Holder<Block> register(String name, boolean registerItem, Supplier<Block> block) {
         var blockHolder = VDExtraMod.register(name, BuiltInRegistries.BLOCK, block);
         if (registerItem)

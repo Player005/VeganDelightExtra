@@ -7,6 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 import java.util.function.Supplier;
 
 public class VDExtraMod {
+
     static final String modID = "vegan_delight_extra";
     public static SimpleRegistrar registrar;
 
