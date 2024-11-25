@@ -6,11 +6,12 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.UnknownNullability;
 
-import javax.annotation.Nullable;
 import java.util.function.Supplier;
 
 public abstract class ModBlocks {
@@ -23,15 +24,8 @@ public abstract class ModBlocks {
 
     static RegisteredBlock olive_log = register("olive_logs", true, () -> {
         System.out.println("olive_logs block lambda called");
-        return new Block(
-                BlockBehaviour.Properties.of()
-//                        .mapColor(blockState -> blockState.getValue(RotatedPillarBlock.AXIS) ==
-//                                Direction.Axis.Y ?
-//                                MapColor.WOOD : MapColor.PODZOL)
-//                        .instrument(NoteBlockInstrument.BASS)
-//                        .strength(2.0F)
-//                        .sound(SoundType.WOOD)
-//                        .ignitedByLava()
+        return new RotatedPillarBlock(
+                BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
         );
     });
 
