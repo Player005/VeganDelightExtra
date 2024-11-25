@@ -6,10 +6,10 @@
       "y": 90
     },
     "axis=y": {
-      "model": "minecraft:block/olive_log"
+      "model": "vegan_delight_extra:block/olive_log"
     },
     "axis=z": {
-      "model": "minecraft:block/olive_log_horizontal",
+      "model": "vegan_delight_extra:block/olive_log_horizontal",
       "x": 90
     }
   }
