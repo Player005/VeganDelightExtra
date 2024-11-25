@@ -15,19 +15,13 @@ import org.jetbrains.annotations.UnknownNullability;
 import java.util.function.Supplier;
 
 public abstract class ModBlocks {
-    static RegisteredBlock olive_leaves = register("olive_leaves", true, () -> {
-        System.out.println("olive_leaves block lambda called");
-        return new Block(
-                BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_LEAVES)
-        );
-    });
+    static RegisteredBlock olive_leaves = register("olive_leaves", true, () -> new Block(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_LEAVES)
+    ));
 
-    static RegisteredBlock olive_log = register("olive_log", true, () -> {
-        System.out.println("olive_logs block lambda called");
-        return new RotatedPillarBlock(
-                BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
-        );
-    });
+    static RegisteredBlock olive_log = register("olive_log", true, () -> new RotatedPillarBlock(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
+    ));
 
     private static @NotNull RegisteredBlock register(String name, boolean registerItem, Supplier<Block> block) {
         var blockHolder = VDExtraMod.register(name, BuiltInRegistries.BLOCK, block);
