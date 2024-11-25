@@ -22,7 +22,7 @@ public abstract class ModBlocks {
         );
     });
 
-    static RegisteredBlock olive_log = register("olive_logs", true, () -> {
+    static RegisteredBlock olive_log = register("olive_log", true, () -> {
         System.out.println("olive_logs block lambda called");
         return new RotatedPillarBlock(
                 BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
