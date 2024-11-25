@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "vegan_delight_extra:block/olive_leaves"
+  }
+}
