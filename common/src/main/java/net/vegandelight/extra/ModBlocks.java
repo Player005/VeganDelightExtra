@@ -9,41 +9,27 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.UnknownNullability;
 
 import java.util.function.Supplier;
 
 public abstract class ModBlocks {
-    static RegisteredBlock olive_leaves = register("olive_leaves", true, () -> new Block(
+    static Holder<Block> olive_leaves = register("olive_leaves", true, () -> new Block(
             BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_LEAVES)
     ));
 
-    static RegisteredBlock olive_log = register("olive_log", true, () -> new RotatedPillarBlock(
+    static Holder<Block> olive_log = register("olive_log", true, () -> new RotatedPillarBlock(
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
     ));
 
-    private static @NotNull RegisteredBlock register(String name, boolean registerItem, Supplier<Block> block) {
+    private static @NotNull Holder<Block> register(String name, boolean registerItem, Supplier<Block> block) {
         var blockHolder = VDExtraMod.register(name, BuiltInRegistries.BLOCK, block);
-        Holder<Item> itemHolder = null;
         if (registerItem)
-            itemHolder = VDExtraMod.register(
+            VDExtraMod.register(
                     name, BuiltInRegistries.ITEM,
                     () -> new BlockItem(blockHolder.value(), new Item.Properties())
             );
-        return new RegisteredBlock(blockHolder, itemHolder);
+        return blockHolder;
     }
 
     static void init() {}
-
-    public record RegisteredBlock(Holder<Block> blockHolder, @Nullable Holder<Item> itemHolder) {
-        public @UnknownNullability Item getItem() {
-            assert itemHolder != null;
-            return itemHolder.value();
-        }
-
-        public @NotNull Block getBlock() {
-            return blockHolder.value();
-        }
-    }
 }

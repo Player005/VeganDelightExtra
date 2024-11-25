@@ -17,8 +17,8 @@ public abstract class ModCreativeTabs {
                     .icon(Items.ACACIA_BOAT::getDefaultInstance)
                     .title(Component.literal("Hi!"))
                     .displayItems((params, output) -> {
-                        output.accept(ModBlocks.olive_leaves.getItem());
-                        output.accept(ModBlocks.olive_log.getItem());
+                        output.accept(ModBlocks.olive_leaves.value());
+                        output.accept(ModBlocks.olive_log.value());
                     }).build()
     );
 
