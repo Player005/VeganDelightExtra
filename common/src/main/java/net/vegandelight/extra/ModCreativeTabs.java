@@ -4,6 +4,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 
 import java.util.function.Supplier;
@@ -17,8 +18,8 @@ public abstract class ModCreativeTabs {
                     .icon(Items.ACACIA_BOAT::getDefaultInstance)
                     .title(Component.literal("Hi!"))
                     .displayItems((params, output) -> {
-                        output.accept(ModBlocks.olive_log.value());
-                        output.accept(ModBlocks.olive_leaves.value());
+                        output.accept(new ItemStack(ModBlocks.olive_leaves.getItem(), 1));
+                        output.accept(new ItemStack(ModBlocks.olive_log.getItem(), 1));
                     }).build()
     );
 

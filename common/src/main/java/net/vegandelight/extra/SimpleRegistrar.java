@@ -9,8 +9,11 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.Supplier;
 
 public interface SimpleRegistrar {
-    default <T> Holder<T> register(Registry<T> registry, ResourceLocation rl, @NotNull Supplier<T> value) {
-        return Registry.registerForHolder(registry, rl, value.get());
+    default <T> Holder<T> register(@NotNull Registry<T> registry, ResourceLocation rl, @NotNull Supplier<T> value) {
+        var obj = value.get();
+        var holder = Holder.direct(obj);
+        Registry.register(registry, rl, obj);
+        return holder;
     }
 
     CreativeModeTab.Builder creativeTabBuilder();

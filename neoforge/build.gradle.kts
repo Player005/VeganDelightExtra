@@ -36,7 +36,7 @@ neoForge {
             // "REGISTRYDUMP": For getting the contents of all registries.
             systemProperty("forge.logging.markers", "REGISTRIES")
 
-            logLevel = Level.DEBUG
+            logLevel = Level.INFO
         }
     }
 

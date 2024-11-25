@@ -14,6 +14,7 @@ public class VDExtraMod {
         VDExtraMod.registrar = registrar;
 
         ModBlocks.init();
+        ModItems.init();
         ModCreativeTabs.init();
     }
 
