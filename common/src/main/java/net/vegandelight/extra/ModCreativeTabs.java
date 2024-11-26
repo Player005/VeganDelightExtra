@@ -4,7 +4,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.Contract;
@@ -18,7 +18,7 @@ public abstract class ModCreativeTabs {
 
     public static final Holder<CreativeModeTab> vd_extra_tab = register("vd_extra_tab",
             () -> platform.creativeTabBuilder()
-                    .icon(Items.ACACIA_BOAT::getDefaultInstance)
+                    .icon(() -> new ItemStack(ModBlocks.olive_sapling.value()))
                     .title(Component.literal("Vegan Delight Extra"))
                     .displayItems((params, output) -> {
                         for (ItemLike item : get_all_vd_extra_items()) output.accept(item);
