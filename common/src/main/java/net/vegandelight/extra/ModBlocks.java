@@ -15,19 +15,20 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.Supplier;
 
 public abstract class ModBlocks {
-    static Holder<Block> olive_sapling = register("olive_sapling", true, () -> new SaplingBlock(
+
+    public static Holder<Block> olive_sapling = register("olive_sapling", true, () -> new SaplingBlock(
             TreeGrower.BIRCH, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)
     ) {});
 
-    static Holder<Block> olive_leaves = register("olive_leaves", true, () -> new Block(
+    public static Holder<Block> olive_leaves = register("olive_leaves", true, () -> new Block(
             BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_LEAVES)
     ));
 
-    static Holder<Block> olive_log = register("olive_log", true, () -> new RotatedPillarBlock(
+    public static Holder<Block> olive_log = register("olive_log", true, () -> new RotatedPillarBlock(
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
     ));
 
-    static Holder<Block> olive_wood = register("olive_wood", true, () -> new RotatedPillarBlock(
+    public static Holder<Block> olive_wood = register("olive_wood", true, () -> new RotatedPillarBlock(
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)
     ));
 
