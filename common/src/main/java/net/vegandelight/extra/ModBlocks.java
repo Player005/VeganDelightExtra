@@ -2,6 +2,8 @@ package net.vegandelight.extra;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -12,12 +14,24 @@ import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Optional;
 import java.util.function.Supplier;
+
+import static net.minecraft.core.registries.Registries.CONFIGURED_FEATURE;
 
 public abstract class ModBlocks {
 
+    public static final TreeGrower OLIVE_TREE_GROWER = new TreeGrower("olive",
+            Optional.empty(),
+            Optional.of(ResourceKey.create(
+                    CONFIGURED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(VDExtraMod.modID, "olive_tree"))
+            ),
+            Optional.empty()
+    );
+
     public static Holder<Block> olive_sapling = register("olive_sapling", true, () -> new SaplingBlock(
-            TreeGrower.BIRCH, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)
+            OLIVE_TREE_GROWER, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)
     ) {});
 
     public static Holder<Block> olive_leaves = register("olive_leaves", true, () -> new Block(
