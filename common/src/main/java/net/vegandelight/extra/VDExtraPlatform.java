@@ -1,6 +1,7 @@
 package net.vegandelight.extra;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
@@ -30,6 +31,8 @@ public interface VDExtraPlatform {
     void onServerStart(Consumer<MinecraftServer> consumer);
 
     void onClientStart(Consumer<Minecraft> consumer);
+
+    void setBlockColor(BlockColor color, Block... blocks);
 
     void setRenderLayerUnsafe(Block block, RenderType renderType);
 

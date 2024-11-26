@@ -1,6 +1,7 @@
 package net.vegandelight.extra;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Holder;
@@ -12,6 +13,7 @@ import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.RegisterEvent;
@@ -56,6 +58,11 @@ public class VDExtraNeoforge {
             VDExtraNeoforge.modEventBus.addListener(FMLCommonSetupEvent.class, event -> {
                 if (isClient()) consumer.accept(Minecraft.getInstance());
             });
+        }
+
+        @Override
+        public void setBlockColor(BlockColor color, Block... blocks) {
+            modEventBus.addListener(RegisterColorHandlersEvent.Block.class, event -> event.register(color, blocks));
         }
 
         @SuppressWarnings("deprecation")
