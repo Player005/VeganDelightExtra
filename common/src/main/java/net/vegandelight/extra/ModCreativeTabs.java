@@ -10,13 +10,12 @@ import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.function.Supplier;
-
 import static net.vegandelight.extra.VDExtraMod.platform;
 
 public abstract class ModCreativeTabs {
 
-    public static final Holder<CreativeModeTab> vd_extra_tab = register("vd_extra_tab",
+    public static final Holder<CreativeModeTab> vd_extra_tab = VDExtraMod.register(
+            "vd_extra_tab", BuiltInRegistries.CREATIVE_MODE_TAB,
             () -> platform.creativeTabBuilder()
                     .icon(() -> new ItemStack(ModBlocks.olive_sapling.value()))
                     .title(Component.literal("Vegan Delight Extra"))
@@ -34,8 +33,4 @@ public abstract class ModCreativeTabs {
     }
 
     static void init() {}
-
-    private static Holder<CreativeModeTab> register(String name, Supplier<CreativeModeTab> tab) {
-        return VDExtraMod.register(name, BuiltInRegistries.CREATIVE_MODE_TAB, tab);
-    }
 }
