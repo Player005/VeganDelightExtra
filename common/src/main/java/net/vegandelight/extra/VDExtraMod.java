@@ -9,9 +9,9 @@ import java.util.function.Supplier;
 public class VDExtraMod {
 
     static final String modID = "vegan_delight_extra";
-    public static SimpleRegistrar registrar;
+    public static VDExtraPlatform registrar;
 
-    static void init(SimpleRegistrar registrar) {
+    static void init(VDExtraPlatform registrar) {
         VDExtraMod.registrar = registrar;
 
         ModBlocks.init();

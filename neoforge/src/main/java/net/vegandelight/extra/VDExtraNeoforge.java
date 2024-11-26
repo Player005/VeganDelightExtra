@@ -23,7 +23,7 @@ public class VDExtraNeoforge {
         VDExtraMod.init(new VDNeoforgeRegistrar());
     }
 
-    public static class VDNeoforgeRegistrar implements SimpleRegistrar {
+    public static class VDNeoforgeRegistrar implements VDExtraPlatform {
         @Override
         public <T> Holder<T> register(@NotNull Registry<T> registry, ResourceLocation rl, @NotNull Supplier<T> value) {
             modEventBus.<RegisterEvent>addListener(event -> event.register(registry.key(), rl, value));
