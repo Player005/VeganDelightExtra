@@ -1,0 +1,26 @@
+{
+    "type": "disk",
+    "config": {
+        "target": {
+            "type": "matching_blocks",
+            "blocks": [
+                "grass_block"
+            ]
+        },
+        "state_provider": {
+            "fallback": {
+                "type": "simple_state_provider",
+                "state": {
+                    "Name": "coarse_dirt"
+                }
+            },
+            "rules": []
+        },
+        "half_height": 2,
+        "radius": {
+            "type": "uniform",
+            "min_inclusive": 3,
+            "max_inclusive": 5
+        }
+    }
+}

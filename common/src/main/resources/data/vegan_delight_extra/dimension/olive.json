@@ -1,0 +1,11 @@
+{
+    "generator": {
+        "type": "noise",
+        "biome_source": {
+            "type": "fixed",
+            "biome": "vegan_delight_extra:olive_plains"
+        },
+        "settings": "overworld"
+    },
+    "type": "minecraft:overworld"
+}
