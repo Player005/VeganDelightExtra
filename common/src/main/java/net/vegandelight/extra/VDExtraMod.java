@@ -9,10 +9,10 @@ import java.util.function.Supplier;
 public class VDExtraMod {
 
     static final String modID = "vegan_delight_extra";
-    public static VDExtraPlatform registrar;
+    public static VDExtraPlatform platform;
 
     static void init(VDExtraPlatform registrar) {
-        VDExtraMod.registrar = registrar;
+        VDExtraMod.platform = registrar;
 
         ModBlocks.init();
         ModItems.init();
@@ -20,6 +20,6 @@ public class VDExtraMod {
     }
 
     static <T> Holder<T> register(String name, Registry<T> registry, Supplier<T> obj) {
-        return registrar.register(registry, ResourceLocation.fromNamespaceAndPath(modID, name), obj);
+        return platform.register(registry, ResourceLocation.fromNamespaceAndPath(modID, name), obj);
     }
 }

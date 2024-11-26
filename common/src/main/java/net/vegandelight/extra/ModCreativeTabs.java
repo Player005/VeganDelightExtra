@@ -12,12 +12,12 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
-import static net.vegandelight.extra.VDExtraMod.registrar;
+import static net.vegandelight.extra.VDExtraMod.platform;
 
 public abstract class ModCreativeTabs {
 
     public static final Holder<CreativeModeTab> vd_extra_tab = register("vd_extra_tab",
-            () -> registrar.creativeTabBuilder()
+            () -> platform.creativeTabBuilder()
                     .icon(Items.ACACIA_BOAT::getDefaultInstance)
                     .title(Component.literal("Vegan Delight Extra"))
                     .displayItems((params, output) -> {
