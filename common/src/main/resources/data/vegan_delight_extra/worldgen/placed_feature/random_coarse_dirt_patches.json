@@ -1,0 +1,12 @@
+{
+  "feature": "vegan_delight_extra:random_coarse_dirt_patches",
+  "placement": [
+    {
+      "type": "in_square"
+    },
+    {
+      "type": "heightmap",
+      "heightmap": "WORLD_SURFACE"
+    }
+  ]
+}

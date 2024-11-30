@@ -1,0 +1,12 @@
+{
+  "feature": "vegan_delight_extra:small_coarse_dirt_disk",
+  "placement": [
+    {
+      "type": "in_square"
+    },
+    {
+      "type": "heightmap",
+      "heightmap": "WORLD_SURFACE"
+    }
+  ]
+}

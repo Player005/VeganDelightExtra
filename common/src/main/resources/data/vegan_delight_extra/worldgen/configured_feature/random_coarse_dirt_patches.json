@@ -1,0 +1,8 @@
+{
+  "type": "random_patch",
+  "config": {
+    "tries": 12,
+    "y-spread": 0,
+    "feature": "vegan_delight_extra:small_coarse_dirt_disk"
+  }
+}
