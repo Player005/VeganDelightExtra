@@ -27,8 +27,8 @@ public abstract class ModCreativeTabs {
     @Contract(" -> new")
     public static ItemLike @NotNull [] get_all_vd_extra_items() {
         return new Block[]{
-                ModBlocks.olive_wood.value(), ModBlocks.stripped_olive_wood.value(), ModBlocks.olive_log.value(),
-                ModBlocks.stripped_olive_log.value(), ModBlocks.olive_planks.value(), ModBlocks.olive_leaves.value(),
+                ModBlocks.olive_log.value(), ModBlocks.olive_wood.value(), ModBlocks.stripped_olive_log.value(),
+                ModBlocks.stripped_olive_wood.value(), ModBlocks.olive_planks.value(), ModBlocks.olive_leaves.value(),
                 ModBlocks.olive_sapling.value()
         };
     }
