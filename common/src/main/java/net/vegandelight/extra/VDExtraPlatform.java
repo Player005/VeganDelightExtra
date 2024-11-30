@@ -2,13 +2,16 @@ package net.vegandelight.extra;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColor;
+import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Consumer;
@@ -22,6 +25,7 @@ public interface VDExtraPlatform {
         return holder;
     }
 
+    @Contract(value = " -> new", pure = true)
     CreativeModeTab.Builder creativeTabBuilder();
 
     void setRenderLayer(Supplier<Block> block, RenderType renderType);
@@ -31,6 +35,8 @@ public interface VDExtraPlatform {
     void onClientStart(Consumer<Minecraft> consumer);
 
     void setBlockColor(Supplier<Block> block, BlockColor color);
+
+    void setItemColor(Supplier<ItemLike> item, ItemColor itemColor);
 
     default boolean isClient() {
         try {

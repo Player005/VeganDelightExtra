@@ -1,6 +1,7 @@
 package net.vegandelight.extra;
 
 import net.minecraft.client.color.block.BlockColor;
+import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Holder;
@@ -40,12 +41,14 @@ public abstract class ModBlocks {
                     ? BiomeColors.getAverageFoliageColor(blockAndTintGetter, blockPos)
                     : FoliageColor.getDefaultColor();
 
+    public static final ItemColor LEAVE_ITEM_COLOR = (stack, i) -> FoliageColor.getDefaultColor();
+
     public static Holder<Block> olive_sapling = register("olive_sapling", true, RenderType.cutout(),
             () -> new SaplingBlock(OLIVE_TREE_GROWER, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)) {}
     );
 
     public static Holder<Block> olive_leaves = register("olive_leaves", true, RenderType.cutoutMipped(),
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_LEAVES)), LEAVE_BLOCK_COLOR
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_LEAVES)), LEAVE_BLOCK_COLOR, LEAVE_ITEM_COLOR
     );
 
     public static Holder<Block> olive_log = register("olive_log", true, () -> new RotatedPillarBlock(
@@ -59,18 +62,18 @@ public abstract class ModBlocks {
     private static @NotNull Holder<Block> register(String name, boolean registerItem, RenderType renderType,
                                                    Supplier<Block> block) {
         var holder = register(name, registerItem, block);
-        platform.onClientStart(ignored -> {
-            platform.setRenderLayer(holder::value, renderType);
-        });
+        platform.setRenderLayer(holder::value, renderType);
+
         return holder;
     }
 
     private static @NotNull Holder<Block> register(String name, boolean registerItem, RenderType renderType,
-                                                   Supplier<Block> block, BlockColor color) {
+                                                   Supplier<Block> block, BlockColor color, ItemColor itemColor) {
         var holder = register(name, registerItem, block);
 
         platform.setRenderLayer(holder::value, renderType);
         platform.setBlockColor(holder::value, color);
+        if (registerItem) platform.setItemColor(holder::value, itemColor);
 
         return holder;
     }

@@ -2,6 +2,7 @@ package net.vegandelight.extra;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColor;
+import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Holder;
@@ -9,6 +10,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
@@ -56,15 +58,22 @@ public class VDExtraNeoforge {
             modEventBus.addListener(FMLClientSetupEvent.class, event -> consumer.accept(Minecraft.getInstance()));
         }
 
-        @Override
-        public void setBlockColor(Supplier<Block> block, BlockColor color) {
-            modEventBus.addListener(RegisterColorHandlersEvent.Block.class, event -> event.register(color, block.get()));
-        }
-
         @SuppressWarnings("deprecation")
         @Override
         public void setRenderLayer(Supplier<Block> block, RenderType renderType) {
             onClientStart(mc -> ItemBlockRenderTypes.setRenderLayer(block.get(), renderType));
+        }
+
+        @Override
+        public void setBlockColor(Supplier<Block> block, BlockColor color) {
+            modEventBus.addListener(RegisterColorHandlersEvent.Block.class, event -> event.register(color,
+                    block.get()));
+        }
+
+        @Override
+        public void setItemColor(Supplier<ItemLike> item, ItemColor itemColor) {
+            modEventBus.addListener(RegisterColorHandlersEvent.Item.class, event -> event.register(itemColor,
+                    item.get()));
         }
     }
 }
