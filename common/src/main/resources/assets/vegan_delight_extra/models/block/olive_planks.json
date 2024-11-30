@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "vegan_delight_extra:block/olive_planks"
+  }
+}
