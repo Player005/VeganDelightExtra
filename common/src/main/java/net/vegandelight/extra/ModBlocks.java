@@ -55,8 +55,20 @@ public abstract class ModBlocks {
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
     ));
 
+    public static final Holder<Block> stripped_olive_log = register("stripped_olive_log", true,
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG))
+    );
+
     public static Holder<Block> olive_wood = register("olive_wood", true, () -> new RotatedPillarBlock(
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)
+    ));
+
+    public static final Holder<Block> stripped_olive_wood = register("stripped_olive_wood", true,
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD))
+    );
+
+    public static final Holder<Block> olive_planks = register("olive_planks", true, () -> new Block(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)
     ));
 
     private static @NotNull Holder<Block> register(String name, boolean registerItem, RenderType renderType,

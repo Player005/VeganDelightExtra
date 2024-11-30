@@ -1,6 +1,9 @@
 {
   "block.vegan_delight_extra.olive_log": "Olive log",
+  "block.vegan_delight_extra.stripped_olive_log": "Stripped Olive Log",
   "block.vegan_delight_extra.olive_leaves": "Olive Leaves",
   "block.vegan_delight_extra.olive_wood": "Olive Wood",
-  "block.vegan_delight_extra.olive_sapling": "Olive Sapling"
+  "block.vegan_delight_extra.stripped_olive_wood": "Stripped Olive Wood",
+  "block.vegan_delight_extra.olive_sapling": "Olive Sapling",
+  "block.vegan_delight_extra.olive_planks": "Olive Planks"
 }
