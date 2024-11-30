@@ -14,6 +14,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.Block;
 
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 public class VDExtraFabric implements ModInitializer {
     @Override
@@ -35,13 +36,13 @@ public class VDExtraFabric implements ModInitializer {
             }
 
             @Override
-            public void setBlockColor(BlockColor color, Block... blocks) {
-                ColorProviderRegistry.BLOCK.register(color, blocks);
+            public void setBlockColor(Supplier<Block> block, BlockColor color) {
+                onClientStart(mc -> ColorProviderRegistry.BLOCK.register(color, block.get()));
             }
 
             @Override
-            public void setRenderLayerUnsafe(Block block, RenderType renderType) {
-                BlockRenderLayerMap.INSTANCE.putBlock(block, renderType);
+            public void setRenderLayer(Supplier<Block> block, RenderType renderType) {
+                onClientStart(mc -> BlockRenderLayerMap.INSTANCE.putBlock(block.get(), renderType));
             }
         });
     }

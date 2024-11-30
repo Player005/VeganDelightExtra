@@ -24,17 +24,13 @@ public interface VDExtraPlatform {
 
     CreativeModeTab.Builder creativeTabBuilder();
 
-    default void setRenderLayer(Block block, RenderType renderType) {
-        if (isClient()) setRenderLayerUnsafe(block, renderType);
-    }
+    void setRenderLayer(Supplier<Block> block, RenderType renderType);
 
     void onServerStart(Consumer<MinecraftServer> consumer);
 
     void onClientStart(Consumer<Minecraft> consumer);
 
-    void setBlockColor(BlockColor color, Block... blocks);
-
-    void setRenderLayerUnsafe(Block block, RenderType renderType);
+    void setBlockColor(Supplier<Block> block, BlockColor color);
 
     default boolean isClient() {
         try {

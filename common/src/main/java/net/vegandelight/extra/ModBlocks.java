@@ -60,7 +60,7 @@ public abstract class ModBlocks {
                                                    Supplier<Block> block) {
         var holder = register(name, registerItem, block);
         platform.onClientStart(ignored -> {
-            platform.setRenderLayer(holder.value(), renderType);
+            platform.setRenderLayer(holder::value, renderType);
         });
         return holder;
     }
@@ -68,10 +68,10 @@ public abstract class ModBlocks {
     private static @NotNull Holder<Block> register(String name, boolean registerItem, RenderType renderType,
                                                    Supplier<Block> block, BlockColor color) {
         var holder = register(name, registerItem, block);
-        platform.onClientStart(ignored -> {
-            platform.setRenderLayer(holder.value(), renderType);
-            platform.setBlockColor(color, holder.value());
-        });
+
+        platform.setRenderLayer(holder::value, renderType);
+        platform.setBlockColor(holder::value, color);
+
         return holder;
     }
 

@@ -12,8 +12,9 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.RegisterEvent;
@@ -30,10 +31,10 @@ public class VDExtraNeoforge {
     public VDExtraNeoforge(IEventBus modEventBus) {
         VDExtraNeoforge.modEventBus = modEventBus;
 
-        VDExtraMod.init(new VDNeoforgeRegistrar());
+        VDExtraMod.init(new VDNeoforgePlatform());
     }
 
-    public static class VDNeoforgeRegistrar implements VDExtraPlatform {
+    public static class VDNeoforgePlatform implements VDExtraPlatform {
         @Override
         public <T> Holder<T> register(@NotNull Registry<T> registry, ResourceLocation rl, @NotNull Supplier<T> value) {
             modEventBus.<RegisterEvent>addListener(event -> event.register(registry.key(), rl, value));
@@ -47,28 +48,23 @@ public class VDExtraNeoforge {
 
         @Override
         public void onServerStart(Consumer<MinecraftServer> consumer) {
-            VDExtraNeoforge.modEventBus.addListener(
-                    ServerStartingEvent.class,
-                    event -> consumer.accept(event.getServer())
-            );
+            NeoForge.EVENT_BUS.addListener(ServerStartingEvent.class, event -> consumer.accept(event.getServer()));
         }
 
         @Override
         public void onClientStart(Consumer<Minecraft> consumer) {
-            VDExtraNeoforge.modEventBus.addListener(FMLCommonSetupEvent.class, event -> {
-                if (isClient()) consumer.accept(Minecraft.getInstance());
-            });
+            modEventBus.addListener(FMLClientSetupEvent.class, event -> consumer.accept(Minecraft.getInstance()));
         }
 
         @Override
-        public void setBlockColor(BlockColor color, Block... blocks) {
-            modEventBus.addListener(RegisterColorHandlersEvent.Block.class, event -> event.register(color, blocks));
+        public void setBlockColor(Supplier<Block> block, BlockColor color) {
+            modEventBus.addListener(RegisterColorHandlersEvent.Block.class, event -> event.register(color, block.get()));
         }
 
         @SuppressWarnings("deprecation")
         @Override
-        public void setRenderLayerUnsafe(Block block, RenderType renderType) {
-            ItemBlockRenderTypes.setRenderLayer(block, renderType);
+        public void setRenderLayer(Supplier<Block> block, RenderType renderType) {
+            onClientStart(mc -> ItemBlockRenderTypes.setRenderLayer(block.get(), renderType));
         }
     }
 }
