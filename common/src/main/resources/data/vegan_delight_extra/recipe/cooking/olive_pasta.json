@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "id": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1,
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "tag": "forge:pasta"
+    },
+    {
+      "item": "vegan_delight_extra:olive"
+    }
+  ],
+  "result": {
+    "id": "vegan_delight_extra:olive_pasta"
+  }
+}

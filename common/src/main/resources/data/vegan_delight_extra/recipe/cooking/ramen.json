@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "id": "vegan_delight_extra:chopstick_bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1,
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "item": "vegandelight:soymilk"
+    },
+    {
+      "tag": "forge:pasta"
+    },
+    {
+      "item": "vegandelight:tofu_slices"
+    }
+  ],
+  "result": {
+    "id": "vegan_delight_extra:ramen"
+  }
+}
