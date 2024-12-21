@@ -73,9 +73,29 @@ tasks {
     withType<ProcessResources>().matching(notNeoTask).configureEach {
         from(project(":common").sourceSets.main.get().resources)
 
+        // TODO: explanation
+        processUnifiedLoadConditions()
+
         // make all properties defined in gradle.properties usable in the neoforge.mods.toml
         filesMatching("META-INF/neoforge.mods.toml") {
             expand(rootProject.properties)
+        }
+    }
+}
+
+fun AbstractCopyTask.processUnifiedLoadConditions() {
+    filesMatching("data/**/*.json") {
+        filter { line ->
+            // I am very sorry for anyone who tries to read or understand this
+            line.replace("""^(\s*)"load_conditions":""".toRegex(), "$1\"neoforge:conditions\":")
+                .replace("""^(\s*\{?\s*)"condition":\s*"mod_loaded"""".toRegex(), "$1\"type\": \"neoforge:mod_loaded\"")
+                .replace("""^(\s*)"mod":\s*"(.*)"""".toRegex(), "$1\"modid\": \"$2\"")
+                .replace("""^(\s*\{?\s*)"condition":\s*"and"""".toRegex(), "$1\"condition\": \"neoforge:and\"")
+                .replace("""^(\s*\{?\s*)"condition":\s*"or"""".toRegex(), "$1\"condition\": \"neoforge:or\"")
+                .replace("""^(\s*\{?\s*)"condition":\s*"true"""".toRegex(), "$1\"condition\": \"neoforge:true\"")
+                .replace("""^(\s*\{?\s*)"condition":\s*"false"""".toRegex(), "$1\"condition\": \"neoforge:false\"")
+                .replace("""^(\s*\{?\s*)"condition":\s*"is_fabric"""".toRegex(), "$1\"condition\": \"neoforge:false\"")
+                .replace("""^(\s*\{?\s*)"condition":\s*"is_neoforge"""".toRegex(), "$1\"condition\": \"neoforge:true\"")
         }
     }
 }
