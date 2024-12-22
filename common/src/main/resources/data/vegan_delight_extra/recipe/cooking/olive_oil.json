@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "id": "minecraft:glass_bottle"
+  },
+  "cookingtime": 100,
+  "experience": 1,
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "item": "vegan_delight_extra:olive"
+    },
+    {
+      "item": "vegandelight:salt"
+    }
+  ],
+  "result": {
+    "id": "vegan_delight_extra:olive_oil"
+  }
+}

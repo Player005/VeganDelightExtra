@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "minecraft:potato"
+    },
+    {
+      "item": "vegan_delight_extra:olive"
+    },
+    {
+      "item": "vegan_delight_extra:mayonaise"
+    },
+    {
+      "item": "vegan_delight_extra:olive_oil"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "item": "vegan_delight_extra:potato_salad"
+  }
+}

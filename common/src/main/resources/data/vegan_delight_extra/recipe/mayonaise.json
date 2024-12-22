@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:eggs"
+    },
+    {
+      "item": "vegan_delight_extra:olive_oil"
+    },
+    {
+      "item": "vegandelight:salt"
+    }
+  ],
+  "result": {
+    "id": "vegan_delight_extra:mayonaise"
+  }
+}
