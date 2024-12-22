@@ -8,7 +8,7 @@
   "recipe_book_tab": "meals",
   "ingredients": [
     {
-      "tag": "forge:pasta"
+      "tag": "c:foods/pasta"
     },
     {
       "item": "vegan_delight_extra:olive"
