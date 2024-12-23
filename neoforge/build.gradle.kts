@@ -75,10 +75,22 @@ tasks {
 
         // TODO: explanation
         processUnifiedLoadConditions()
+        convertFluidUnits()
 
         // make all properties defined in gradle.properties usable in the neoforge.mods.toml
         filesMatching("META-INF/neoforge.mods.toml") {
             expand(rootProject.properties)
+        }
+    }
+}
+
+fun AbstractCopyTask.convertFluidUnits() {
+    filesMatching("data/**/*.json") {
+        filter { line ->
+            var result = line.replace(""""(\d*\.?\d*)_millibuckets"""".toRegex(), "$1")
+            val regex = """"(\d*\.?\d*)_droplets"""".toRegex()
+            regex.find(line)?.let { result = result.replace(regex, (it.groups[1]!!.value.toInt() / 81).toString()) }
+            result
         }
     }
 }

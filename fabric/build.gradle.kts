@@ -66,6 +66,7 @@ tasks {
 
         // TODO: explanation
         processUnifiedLoadConditions()
+        convertFluidUnits()
 
         // make all properties defined in gradle.properties usable in the neoforge.mods.toml
         filesMatching("fabric.mod.json") {
@@ -79,6 +80,17 @@ tasks {
 
     named("test").configure {
         enabled = false
+    }
+}
+
+fun AbstractCopyTask.convertFluidUnits() {
+    filesMatching("data/**/*.json") {
+        filter { line ->
+            var result = line.replace(""""(\d*\.?\d*)_droplets"""".toRegex(), "$1")
+            val regex = """"(\d*\.?\d*)_millibuckets"""".toRegex()
+            regex.find(line)?.let { result = result.replace(regex, (it.groups[1]!!.value.toInt() * 81).toString()) }
+            result
+        }
     }
 }
 
