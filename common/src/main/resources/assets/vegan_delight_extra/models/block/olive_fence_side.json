@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_side",
+  "textures": {
+    "texture": "vegan_delight_extra:block/olive_planks"
+  }
+}

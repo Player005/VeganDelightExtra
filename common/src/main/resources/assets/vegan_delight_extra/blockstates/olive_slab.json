@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "vegan_delight_extra:block/olive_slab"
+    },
+    "type=double": {
+      "model": "vegan_delight_extra:block/olive_planks"
+    },
+    "type=top": {
+      "model": "vegan_delight_extra:block/olive_slab_top"
+    }
+  }
+}

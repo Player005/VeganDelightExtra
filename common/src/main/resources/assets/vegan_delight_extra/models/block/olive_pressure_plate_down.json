@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/pressure_plate_down",
+  "textures": {
+    "texture": "vegan_delight_extra:block/olive_planks"
+  }
+}

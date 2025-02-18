@@ -28,8 +28,10 @@ public abstract class ModCreativeTabs {
     public static ItemLike @NotNull [] get_all_vd_extra_items() {
         return new Block[]{
                 ModBlocks.olive_log.value(), ModBlocks.olive_wood.value(), ModBlocks.stripped_olive_log.value(),
-                ModBlocks.stripped_olive_wood.value(), ModBlocks.olive_planks.value(), ModBlocks.olive_leaves.value(),
-                ModBlocks.olive_sapling.value()
+                ModBlocks.stripped_olive_wood.value(), ModBlocks.olive_planks.value(), ModBlocks.olive_slab.value(),
+                ModBlocks.olive_stairs.value(), ModBlocks.olive_fence.value(), ModBlocks.olive_fence_gate.value(),
+                ModBlocks.olive_door.value(), ModBlocks.olive_trapdoor.value(), ModBlocks.olive_pressure_plate.value(),
+                ModBlocks.olive_button.value(), ModBlocks.olive_leaves.value(), ModBlocks.olive_sapling.value()
         };
     }
 

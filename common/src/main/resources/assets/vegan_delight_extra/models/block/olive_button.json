@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "vegan_delight_extra:block/olive_planks"
+  }
+}
