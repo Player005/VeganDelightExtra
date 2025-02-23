@@ -19,8 +19,8 @@ public class VDExtraMod {
         ModItems.init();
         ModCreativeTabs.init();
 
-        platform.onServerStart(minecraftServer -> System.out.println("Server start"));
-        platform.onClientStart(minecraft -> System.out.println("Client start"));
+        //platform.onServerStart(minecraftServer -> System.out.println("Server start"));
+        //platform.onClientStart(minecraft -> System.out.println("Client start"));
     }
 
     static <T> Holder<T> register(String name, Registry<T> registry, Supplier<T> obj) {
