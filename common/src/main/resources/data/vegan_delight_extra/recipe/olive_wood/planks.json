@@ -3,7 +3,7 @@
   "category": "building",
   "ingredients": [
     {
-      "item": "vegan_delight_extra:stripped_olive_log"
+      "tag": "vegan_delight_extra:olive_logs"
     }
   ],
   "result": {
