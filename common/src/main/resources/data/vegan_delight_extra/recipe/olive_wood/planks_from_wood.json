@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "vegan_delight_extra:olive_wood"
+    }
+  ],
+  "result": {
+    "id": "vegan_delight_extra:olive_planks",
+    "count": 4
+  }
+}

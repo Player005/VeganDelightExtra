@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "vegan_delight_extra:olive_planks"
+    }
+  },
+  "result": {
+    "id": "vegan_delight_extra:olive_pressure_plate",
+    "count": 1
+  }
+}
