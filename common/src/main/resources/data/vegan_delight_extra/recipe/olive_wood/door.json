@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "wooden_door",
+  "pattern": [
+    "##",
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "vegan_delight_extra:olive_planks"
+    }
+  },
+  "result": {
+    "id": "vegan_delight_extra:olive_door",
+    "count": 3
+  }
+}

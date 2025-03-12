@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "wooden_fence",
+  "pattern": [
+    "#I#",
+    "#I#"
+  ],
+  "key": {
+    "#": {
+      "item": "vegan_delight_extra:olive_planks"
+    },
+    "I": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "vegan_delight_extra:olive_fence",
+    "count": 3
+  }
+}

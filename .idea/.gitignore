@@ -6,3 +6,4 @@ jarRepositories.xml
 compiler.xml
 gradle.xml
 /libraries/
+misc.xml

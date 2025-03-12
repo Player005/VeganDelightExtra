@@ -1,9 +1,17 @@
 {
   "block.vegan_delight_extra.olive_log": "Olive log",
   "block.vegan_delight_extra.stripped_olive_log": "Stripped Olive Log",
-  "block.vegan_delight_extra.olive_leaves": "Olive Leaves",
   "block.vegan_delight_extra.olive_wood": "Olive Wood",
   "block.vegan_delight_extra.stripped_olive_wood": "Stripped Olive Wood",
   "block.vegan_delight_extra.olive_sapling": "Olive Sapling",
-  "block.vegan_delight_extra.olive_planks": "Olive Planks"
+  "block.vegan_delight_extra.olive_leaves": "Olive Leaves",
+  "block.vegan_delight_extra.olive_planks": "Olive Planks",
+  "block.vegan_delight_extra.olive_slab": "Olive Slab",
+  "block.vegan_delight_extra.olive_stairs": "Olive Stairs",
+  "block.vegan_delight_extra.olive_fence": "Olive Fence",
+  "block.vegan_delight_extra.olive_fence_gate": "Olive Fence Gate",
+  "block.vegan_delight_extra.olive_pressure_plate": "Olive Pressure Plate",
+  "block.vegan_delight_extra.olive_button": "Olive Button",
+  "block.vegan_delight_extra.olive_door": "Olive Door",
+  "block.vegan_delight_extra.olive_trapdoor": "Olive Trapdoor"
 }

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "wooden_stairs",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "vegan_delight_extra:olive_planks"
+    }
+  },
+  "result": {
+    "id": "vegan_delight_extra:olive_stairs",
+    "count": 4
+  }
+}

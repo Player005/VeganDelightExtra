@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "wooden_fence_gate",
+  "pattern": [
+    "I#I",
+    "I#I"
+  ],
+  "key": {
+    "#": {
+      "item": "vegan_delight_extra:olive_planks"
+    },
+    "I": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "vegan_delight_extra:olive_fence_gate",
+    "count": 1
+  }
+}
